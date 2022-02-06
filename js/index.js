@@ -7,5 +7,12 @@ const searchFood = () => {
     //console.log(url);
     fetch(url)
         .then(res => res.json())
-        .then(data => console.log(data.meals));
+        .then(data => displaySearchResult(data.meals));
+}
+
+const displaySearchResult = meals => {
+    const searchResult = document.getElementById('search-result');
+    meals.forEach(meal => {
+        console.log(meal);
+    })
 }
