@@ -35,5 +35,21 @@ const loadMealDetail = mealID => {
     const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealID}`
     fetch(url)
         .then(res => res.json())
-        .then(data => console.log(data));
+        .then(data => displayMealDetail(data.meals[0]));
+}
+
+const displayMealDetail = meal => {
+    console.log(meal);
+    const mealDetails = document.getElementByID('meal-detail');
+    const div = document.createElement('div');
+    div.classList.add('card');
+    div.innerHTML = `
+    <img src="${meal.strMealThumb}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">${meal.strMeal}</h5>
+                <p class="card-text">${meal.strInstructions.slice(0, 100)}</p>
+                <a href="${meal.strYoutube}" class="btn btn-primary">Go somewhere</a>
+            </div>
+    `;
+    mealDetails.appendChild(div);
 }
