@@ -40,7 +40,7 @@ const loadMealDetail = mealID => {
 
 const displayMealDetail = meal => {
     console.log(meal);
-    const mealDetails = document.getElementByID('meal-detail');
+    const mealDetails = document.getElementById('meal-detail');
     const div = document.createElement('div');
     div.classList.add('card');
     div.innerHTML = `
