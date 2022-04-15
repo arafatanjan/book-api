@@ -18,7 +18,7 @@ const displaySearchResult = meals => {
         div.classList.add('col');
         div.innerHTML = `
         <div onclick="loadMealDetail(${meal.idMeal})" class="card">
-                <img src="${meal.strMealThumb}" class="card-img-top" alt="...">
+                <img src="${meal.strMealThumb}" class="card-img-top w-50 mx-auto" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">${meal.strMeal}</h5>
                     <p class="card-text">${meal.strInstructions.slice(0, 100)}</p>
